@@ -25,7 +25,7 @@ def getweather():
     current_time = local_time.strftime('%I:%M %p')
     clock.config(text=current_time)
 
-    api = f"https://api.openweathermap.org/data/2.5/forecast?lat={location.latitude}&lon={location.longitude}&units=metric&exclude=hourly&appid=b1862ca015962bcac26feadddfbc89fc"
+    api = f"https://api.openweathermap.org/data/2.5/forecast?lat={location.latitude}&lon={location.longitude}&units=metric&exclude=hourly&appid={'api_key'}"
     json_data = requests.get(api).json()
     print(json_data)
     temp = json_data['list'][0]['main']['temp']
